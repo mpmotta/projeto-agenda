@@ -8,8 +8,8 @@
 
             $user = $_POST['usuario'];
             $senha = $_POST['senha'];
-            //$salt = md5($senha);
-            //$senha = hash('sha256', $salt);
+            $salt = md5($senha);
+            $senha = hash('sha256', $senha);
             $usuario->logar($user, $senha);    
         }
 
