@@ -27,4 +27,13 @@ class Usuario extends conexao {
             header('Location: ../view/index.php?erro=login');
         }
     }
+
+    //trocar senha
+    public function mudarSenha($id, $senha){
+        $sql = "UPDATE $this->tabela SET senha = :senha WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

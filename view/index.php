@@ -22,9 +22,11 @@
                 placeholder="Senha">
             </div> 
             <div class="m-3">   
-            <button type="submit" id="submit" class="btn btn-primary mb-3">
+            <button type="submit" id="submit" class="form-control btn btn-primary mb-3 logar">
                     Logar
-                </button>
+            </button>
+            <a href="#" class=" form-control btn btn-danger mb-3" id="esqueci">
+                Esqueci a Senha</a>
             </div>    
         </form>
     </div>
@@ -38,5 +40,17 @@
             echo  "<script src='js/deslogado.js'></script>";
         }
     ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#esqueci").click(function(){
+                Swal.fire({
+                    title: "Link da Senha",
+                    text: "enviado para o e-mail cadastrado.",
+                    icon: "success"
+                });
+            });
+            });
+    </script>
 </body>
 </html>
