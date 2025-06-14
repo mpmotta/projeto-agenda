@@ -2,7 +2,7 @@
 abstract class Conexao {
     private $servidor = 'localhost';
     private $user = 'root';
-    private $pass = '';
+    private $pass = 'apple';
     private $banco = 'agenda';
     protected $conn;
 

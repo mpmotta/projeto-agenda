@@ -7,7 +7,7 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
     $foto = $_FILES['avatar']['name'];
 
     $extensao = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
-    $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+    $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
 
     if (in_array($extensao, $extensoesPermitidas)) {
         $tmp_nome = md5($foto . $agora);

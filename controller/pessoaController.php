@@ -69,10 +69,9 @@ class pessoaController {
                 $tmp_nome = md5($foto . date('d-m-Y-h-i-s'));
                 $avatar = $tmp_nome . "." . $extensao;
                 $destino = '../view/img/avatar/' . $avatar;
-                move_uploaded_file($arquivo, $destino);
-				$pessoa->setAvatar($avatar); 
+                move_uploaded_file($arquivo, $destino);	
             }
-
+            $pessoa->setAvatar($avatar); 
             $this->editar($pessoa);
         }
         if (isset($_GET['action']) && $_GET['action'] == 'excluirPessoa') {
